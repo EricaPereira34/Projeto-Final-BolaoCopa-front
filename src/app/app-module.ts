@@ -8,6 +8,7 @@ import { PalpiteComponent } from './palpite-component/palpite-component';
 import { HomeComponent } from './home-component/home-component';
 import { NavBarComponent } from './nav-bar-component/nav-bar-component';
 import { FooterComponent } from './footer-component/footer-component';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { FooterComponent } from './footer-component/footer-component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    NgbModule
+    NgbModule,
+    HttpClientModule
   ],
   providers: [
     provideBrowserGlobalErrorListeners(),

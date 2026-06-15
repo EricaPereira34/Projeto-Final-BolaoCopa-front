@@ -1,1 +1,27 @@
-<p>palpite-component works!</p>
+<div class="container mt-4">
+    <h2 class="mb-4">Bolão da Copa</h2>
+
+    <table class="table table-striped table-bordered">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Participante</th>
+                <th>Time A</th>
+                <th>Time B</th>
+                <th>Gols Time A</th>
+                <th>Gols Time B</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr *ngFor="let palpite of palpites">
+                <td>{{ palpite.id }}</td>
+                <td>{{ palpite.participante }}</td>
+                <td>{{ palpite.timeA }}</td>
+                <td>{{ palpite.timeB }}</td>
+                <td>{{ palpite.golsTimeA }}</td>
+                <td>{{ palpite.golsTimeB }}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>

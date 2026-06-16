@@ -57,4 +57,16 @@ export class PalpiteComponent implements OnInit {
       }
     });
   }
+
+  excluir(id: number): void {
+  this.service.delete(id).subscribe({
+    next: () => {
+      this.listarPalpites();
+    },
+    error: (erro) => {
+      console.log(erro);
+    }
+  });
+}
+
 }

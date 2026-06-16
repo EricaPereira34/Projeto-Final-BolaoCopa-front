@@ -37,7 +37,9 @@
                [(ngModel)]="palpite.golsTimeB">
     </div>
 
-    <button class="btn btn-success" (click)="salvar()">
+    <button
+        class="btn btn-success"
+        (click)="salvar()">
         Salvar
     </button>
 
@@ -46,6 +48,7 @@
     <h2>Lista de Palpites</h2>
 
     <table class="table table-striped table-bordered">
+
         <thead>
             <tr>
                 <th>ID</th>
@@ -54,19 +57,31 @@
                 <th>Time B</th>
                 <th>Gols Time A</th>
                 <th>Gols Time B</th>
+                <th>Ações</th>
             </tr>
         </thead>
 
         <tbody>
             <tr *ngFor="let palpite of palpites">
+
                 <td>{{ palpite.id }}</td>
                 <td>{{ palpite.participante }}</td>
                 <td>{{ palpite.timeA }}</td>
                 <td>{{ palpite.timeB }}</td>
                 <td>{{ palpite.golsTimeA }}</td>
                 <td>{{ palpite.golsTimeB }}</td>
+
+                <td>
+                    <button
+                        class="btn btn-danger btn-sm"
+                        (click)="excluir(palpite.id)">
+                        Excluir
+                    </button>
+                </td>
+
             </tr>
         </tbody>
+
     </table>
 
 </div>

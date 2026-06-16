@@ -4,43 +4,54 @@
 
     <div class="mb-3">
         <label class="form-label">Participante</label>
-        <input type="text"
-               class="form-control"
-               [(ngModel)]="palpite.participante">
+        <input
+            type="text"
+            class="form-control"
+            [(ngModel)]="palpite.participante">
     </div>
 
     <div class="mb-3">
         <label class="form-label">Time A</label>
-        <input type="text"
-               class="form-control"
-               [(ngModel)]="palpite.timeA">
+        <input
+            type="text"
+            class="form-control"
+            [(ngModel)]="palpite.timeA">
     </div>
 
     <div class="mb-3">
         <label class="form-label">Time B</label>
-        <input type="text"
-               class="form-control"
-               [(ngModel)]="palpite.timeB">
+        <input
+            type="text"
+            class="form-control"
+            [(ngModel)]="palpite.timeB">
     </div>
 
     <div class="mb-3">
         <label class="form-label">Gols Time A</label>
-        <input type="number"
-               class="form-control"
-               [(ngModel)]="palpite.golsTimeA">
+        <input
+            type="number"
+            class="form-control"
+            [(ngModel)]="palpite.golsTimeA">
     </div>
 
     <div class="mb-3">
         <label class="form-label">Gols Time B</label>
-        <input type="number"
-               class="form-control"
-               [(ngModel)]="palpite.golsTimeB">
+        <input
+            type="number"
+            class="form-control"
+            [(ngModel)]="palpite.golsTimeB">
     </div>
 
     <button
         class="btn btn-success"
         (click)="salvar()">
-        Salvar
+        {{ palpite.id === 0 ? 'Salvar' : 'Atualizar' }}
+    </button>
+
+    <button
+        class="btn btn-secondary ms-2"
+        (click)="limparFormulario()">
+        Limpar
     </button>
 
     <hr>
@@ -72,11 +83,19 @@
                 <td>{{ palpite.golsTimeB }}</td>
 
                 <td>
+
+                    <button
+                        class="btn btn-warning btn-sm me-2"
+                        (click)="editar(palpite)">
+                        Editar
+                    </button>
+
                     <button
                         class="btn btn-danger btn-sm"
                         (click)="excluir(palpite.id)">
                         Excluir
                     </button>
+
                 </td>
 
             </tr>
